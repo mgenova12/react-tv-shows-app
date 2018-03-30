@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Shows />,
+    <Movie />,
     document.body.appendChild(document.createElement('div')),
   )
 })

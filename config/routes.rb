@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  get '/' => 'movies#index'
   
   namespace :api do
     namespace :v1 do
@@ -6,9 +8,5 @@ Rails.application.routes.draw do
       get '/movies/:id' => 'movies#show'
     end
   end
-
-  get '/' => 'shows#index'
-
-
-
+  
 end
