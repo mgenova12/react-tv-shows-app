@@ -4,6 +4,6 @@
 
 # Movie.destroy_all
 
-10.times do 
-	Movie.create(title: Faker::Book.title, year: rand(1900..2018) , network: Faker::Company.name, category: Faker::Book.genre , description: Faker::Lorem.paragraph(3, false, 5) )
-end
+# 10.times do 
+# 	Movie.create(title: Faker::Book.title, year: rand(1900..2018), image:'https://ia.media-imdb.com/images/M/MV5BMjI3Nzg0MTM5NF5BMl5BanBnXkFtZTgwOTE2MTgwNTM@._V1_.jpg', network: Faker::Company.name, category: Faker::Book.genre , description: Faker::Lorem.paragraph(3, false, 5) )
+# end

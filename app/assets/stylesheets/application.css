@@ -13,3 +13,67 @@
  *= require_tree .
  *= require_self
  */
+
+  *{
+    /*background-image: url('https://image.freepik.com/free-photo/popcorn-background_1373-411.jpg');*/
+    /*background-size: */
+  } 
+
+  h1 {
+  	text-align: center;
+  }
+
+  hr {
+
+  }
+
+  .well img{
+  	width: 100%;
+  	height: 100%;
+  }   
+
+  .well {
+  	padding: 0px;
+  }   
+
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .col-md-2:hover .image {
+    opacity: 0.3;
+    cursor: pointer;
+  } 
+
+  .col-md-2:hover .middle {
+    opacity: 1;
+  }
+
+  .text {
+    color: black;
+    font-size: 16px;
+  }
+
+  .details img {
+  	height: 300px;
+  	width: 200px;
+  	float: left;
+  }
+
+

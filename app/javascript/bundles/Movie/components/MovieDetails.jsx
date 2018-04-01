@@ -34,20 +34,21 @@ export default class MovieDetails extends React.Component {
 
   render() {
 
-    return (
-        
+    return (      
+        <div className='well clearfix'>
+          <div className='details'>
+              <h2>{this.state.Movie.title} </h2>
+              <hr/>
 
-        <div>
+              <img src={this.state.Movie.image}/> <br/>
+              
+              {this.state.Movie.description} <br/>
+              {this.state.Movie.network} <br/>
+              {this.state.Movie.year} <br/>
 
-          {this.state.Movie.title} <br/>
-          {this.state.Movie.year} <br/>
-          {this.state.Movie.network} <br/>
-          {this.state.Movie.description} <br/>
-
+           </div>
         </div>
 
-
-        
     );
   }
 }
