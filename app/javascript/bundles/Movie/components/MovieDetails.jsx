@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {NextButton} from './NextButton'
+import {Navbar} from './Navbar'
 
 export default class MovieDetails extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ export default class MovieDetails extends React.Component {
       cache: false,
       success: function(data){
         this.setState({Movie: data}, function(){
-        	console.log(data);
+        	// console.log(data);
         });
       }.bind(this),
       error: function(xhr, status, err){
@@ -34,8 +35,8 @@ export default class MovieDetails extends React.Component {
   }
 
   render() {
-
     return (      
+      <div>
         <div className='well clearfix'>
           <div className='details'>
               <h2>{this.state.Movie.title} ({this.state.Movie.year}) </h2>
@@ -57,9 +58,8 @@ export default class MovieDetails extends React.Component {
 
               <NextButton movieID={this.state.Movie.id}/>
            </div>
-            
-
         </div>
+      </div>
 
     );
   }

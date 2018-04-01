@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {Movie} from './Movie'
+import {Navbar} from './Navbar'
 
 export default class MovieList extends React.Component {
   constructor(props) {
@@ -17,8 +18,7 @@ export default class MovieList extends React.Component {
       cache: false,
       success: function(data){
         this.setState({Movies: data}, function(){
-        	console.log(data);
-        });
+      });
       }.bind(this),
       error: function(xhr, status, err){
         console.log(err);
@@ -42,9 +42,12 @@ export default class MovieList extends React.Component {
     }
 
     return (
-      <div className="row">
-        {movie}
-      </div>
+		<div> 
+    	<Navbar movies={this.state.Movies}/>
+	      <div className="row">
+	        {movie}
+	      </div>
+      	</div>
     );
   }
 }

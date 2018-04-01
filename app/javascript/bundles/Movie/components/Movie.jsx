@@ -30,11 +30,13 @@ export class Movie extends React.Component {
   render() {
 
     return (
-        <div className="col-md-2"
+        <div 
+          className="col-md-2"
           onMouseEnter={this.handleMouseHover}
           onMouseLeave={this.handleMouseHover} >
 
-          <div className="well movielist" 
+          <div 
+            className="well movielist" 
             onClick={this.handleRedirect.bind(this, this.props.movie.id)} >
           
             <img src={this.props.movie.image}/>
