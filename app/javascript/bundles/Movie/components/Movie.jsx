@@ -1,46 +1,28 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-export default class Movie extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
-      Movies: []
-    };
+export class Movie extends React.Component {
+
+  handleRedirect(id){
+
+    window.location.assign("/" + id)
   }
 
-   getMovies(){
-    $.ajax({
-      url: '/api/v1/movies',
-      dataType: 'json',
-      cache: false,
-      success: function(data){
-        this.setState({Movies: data}, function(){
-        	console.log(data);
-        });
-      }.bind(this),
-      error: function(xhr, status, err){
-        console.log(err);
-      }
-    });
-  } 
 
-  componentDidMount(){
-    this.getMovies();
-  }
 
   render() {
-  	let movies = this.state.Movies.map(movie => {
-  		return <h3 key={movie.id}>{movie.title} </h3>
-  	})
 
     return (
-      <div>
-  
-        	{movies}
+        <div className="col-md-4">
+          <div onClick={this.handleRedirect.bind(this, this.props.movie.id)} className="well">
+            <img src="https://nerdist.com/wp-content/uploads/2015/12/killswitch-engage-revolver-star-wars-cover-crop.jpg"/>
+            <br/>
+              {this.props.movie.title} 
+            <br/>
+              {this.props.movie.year}           
+          </div>
+        </div>
 
-
-      </div>
     );
   }
 }
