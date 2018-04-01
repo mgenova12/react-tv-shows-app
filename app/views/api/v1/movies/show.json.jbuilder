@@ -1,7 +1,9 @@
 	json.id @movie.id
 	json.title @movie.title
 	json.year @movie.year
-	json.network @movie.network
+	json.director @movie.director
 	json.image @movie.image
-	json.category @movie.category
+	json.genre @movie.genre
 	json.description @movie.description
+	json.rating @movie.rating
+	json.quote @movie.quote

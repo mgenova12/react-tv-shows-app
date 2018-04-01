@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import {NextButton} from './NextButton'
 
 export default class MovieDetails extends React.Component {
   constructor(props) {
@@ -37,16 +38,27 @@ export default class MovieDetails extends React.Component {
     return (      
         <div className='well clearfix'>
           <div className='details'>
-              <h2>{this.state.Movie.title} </h2>
+              <h2>{this.state.Movie.title} ({this.state.Movie.year}) </h2>
               <hr/>
 
               <img src={this.state.Movie.image}/> <br/>
-              
-              {this.state.Movie.description} <br/>
-              {this.state.Movie.network} <br/>
-              {this.state.Movie.year} <br/>
 
+              {this.state.Movie.description} 
+              <br/>
+              <br/>
+              Director: {this.state.Movie.director}
+              <br/>
+              Genre: {this.state.Movie.genre} 
+              <br/>
+              Rating: {this.state.Movie.rating} / 10
+              <br/>
+              Random Quote: "{this.state.Movie.quote}"
+
+
+              <NextButton movieID={this.state.Movie.id}/>
            </div>
+            
+
         </div>
 
     );

@@ -14,66 +14,55 @@
  *= require_self
  */
 
-  *{
-    /*background-image: url('https://image.freepik.com/free-photo/popcorn-background_1373-411.jpg');*/
-    /*background-size: */
+  body{
+    /*background-image: url('http://fillyourplate.org/blog/wp-content/uploads/2014/01/bigstock-Popcorn-Background-Close-Up-49678148.jpg');*/
+    /*background-size: cover; */
+    /*background-color: grey;*/
   } 
 
   h1 {
   	text-align: center;
   }
 
-  hr {
-
-  }
+  .movielist:hover {
+    opacity: 0.3;
+    cursor: pointer;
+    transition: .5s ease;
+  } 
 
   .well img{
   	width: 100%;
-  	height: 100%;
+  	height: 260px;
+  	/*height: 100%;*/
   }   
 
   .well {
   	padding: 0px;
+  	position: relative;
   }   
 
-  .image {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: .5s ease;
-    backface-visibility: hidden;
-  }
-
-  .middle {
-    transition: .5s ease;
-    opacity: 0;
+  .text {
+  	color: black;
+  	text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-  }
-
-  .col-md-2:hover .image {
-    opacity: 0.3;
-    cursor: pointer;
-  } 
-
-  .col-md-2:hover .middle {
-    opacity: 1;
-  }
-
-  .text {
-    color: black;
-    font-size: 16px;
+    z-index: -1;
   }
 
   .details img {
   	height: 300px;
   	width: 200px;
   	float: left;
+  	margin: 10px;
+  }
+
+  .nextbutton {
+  	position: absolute;
+	right:    0;
+	bottom:   0;
+	margin: 15px;
   }
 
 
