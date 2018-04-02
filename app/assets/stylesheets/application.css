@@ -91,7 +91,14 @@
   }
 
   .addmovies input {
-    margin: 3px;
+    margin: 2px;
   }
 
+  .deletebutton {
+    position: absolute;
+    right:    0;
+    top:   0;
+    z-index: 1;
+    margin: 11px 16px 0 0;
+  }
 

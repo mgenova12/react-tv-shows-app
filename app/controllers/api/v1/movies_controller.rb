@@ -28,5 +28,11 @@ class Api::V1::MoviesController < ApplicationController
   	render 'show.json.jbuilder'
   end
 
+  def destroy 
+    movie = Movie.find_by(id: params[:id])
+
+    movie.destroy
+  end
+
 
 end

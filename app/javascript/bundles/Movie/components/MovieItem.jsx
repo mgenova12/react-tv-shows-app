@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import {DeleteMovie} from './DeleteMovie'
 
 export class MovieItem extends React.Component {
 
@@ -26,6 +27,10 @@ export class MovieItem extends React.Component {
     window.location.assign("/" + id)
   }
 
+  onDeleteMovie(id){
+    this.props.DeleteMovie(id)
+  }      
+
   render() {
     return (
       <div 
@@ -36,11 +41,17 @@ export class MovieItem extends React.Component {
         <div 
           className="well movielist" 
           onClick={this.handleRedirect.bind(this, this.props.movie.id)} >
-        
           <img src={this.props.movie.image}/>
-
         </div>
 
+
+        {
+          this.state.isHovering &&
+            <div className="deletebutton">
+              <DeleteMovie DeleteMovie={this.onDeleteMovie.bind(this)} movieID={this.props.movie.id}/>
+            </div>
+        }
+        
         {
           this.state.isHovering &&
             <div className="text">

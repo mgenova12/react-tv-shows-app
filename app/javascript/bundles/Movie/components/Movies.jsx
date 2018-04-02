@@ -37,13 +37,20 @@ export default class Movies extends React.Component {
     this.setState({Movies:movie})
   }
 
+  handleDeleteMovie(id){
+    let movie = this.state.Movies
+    let index = this.state.Movies.findIndex(movie => movie.id === id)
+    this.state.Movies.splice(index,1)
+    this.setState({Movies:movie})
+  }
+
 
   render() {
     return (
   		<div> 
         <Navbar movies={this.state.Movies}/>
         <AddMovie AddNewMovie={this.handleNewMovie.bind(this)}/>
-        <MovieList movies={this.state.Movies}/>
+        <MovieList DeleteMovie={this.handleDeleteMovie.bind(this)} movies={this.state.Movies}/>
       </div>
     );
   }
