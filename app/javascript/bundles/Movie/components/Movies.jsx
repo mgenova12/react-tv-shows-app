@@ -33,7 +33,7 @@ export default class Movies extends React.Component {
 
   handleNewMovie(newMovie){
     let movie = this.state.Movies
-    movie.push(newMovie)
+    movie.unshift(newMovie)
     this.setState({Movies:movie})
   }
 

@@ -2,7 +2,7 @@ class Api::V1::MoviesController < ApplicationController
    skip_before_action :verify_authenticity_token
 
   def index
-  	@movies = Movie.all
+  	@movies = Movie.all.order(id: :desc)
 
   	render 'index.json.jbuilder'
   end

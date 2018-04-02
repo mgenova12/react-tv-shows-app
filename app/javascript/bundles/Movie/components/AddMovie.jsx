@@ -11,17 +11,19 @@ export class AddMovie extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    
-    var parameters = {
-      title: this.refs.title.value,
-      year: this.refs.year.value,
-      image: this.refs.image.value,
-      director: this.refs.director.value,
-      genre: this.refs.genre.value,
-      rating: this.refs.rating.value,
-      quote: this.refs.quote.value,
-      description: this.refs.description.value
-    }
+    if (this.refs.title.value === ''){
+      alert('Please Enter a Title')
+    } else {
+      var parameters = {
+        title: this.refs.title.value,
+        year: this.refs.year.value,
+        image: this.refs.image.value,
+        director: this.refs.director.value,
+        genre: this.refs.genre.value,
+        rating: this.refs.rating.value,
+        quote: this.refs.quote.value,
+        description: this.refs.description.value
+      }
 
       $.ajax({
         type: 'POST',
@@ -43,20 +45,21 @@ export class AddMovie extends React.Component {
             description: response.description
           }}, function(){
             this.props.AddNewMovie(this.state.newMovie)
+            document.getElementById("movie-form").reset();
           });
         }.bind(this),
         error: function(xhr, status, err){
           console.log(err);
         }
       });
-
+    }
   }
 
 
   render() {
     return (
       <div className='addmovies'>
-        <form className="form-inline" onSubmit={this.handleSubmit.bind(this)}>
+        <form id='movie-form' className="form-inline" onSubmit={this.handleSubmit.bind(this)}>
             <div className="form-group">
                  <input type="text" className="form-control" ref="title" placeholder="Title"/>
             </div>
@@ -82,7 +85,7 @@ export class AddMovie extends React.Component {
                 <input type="text" className="form-control" ref="description" placeholder="Description"/>   
             </div>     
 
-           <button type="submit" className="btn btn-default">Submit</button>      
+           <button type="submit" className="btn btn-primary">Add Movie</button>      
         </form>
 
       </div>

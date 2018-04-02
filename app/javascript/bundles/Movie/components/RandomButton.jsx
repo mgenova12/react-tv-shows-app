@@ -3,14 +3,14 @@ import React from 'react';
 
 export class RandomButton extends React.Component {
 
-  onRandomClick(firstID, lastID){
-    window.location.assign("/" + (Math.floor(Math.random()*(lastID-firstID+1)+firstID)))
+  onRandomClick(randomID){
+    window.location.assign("/" + randomID)
   }
 
   render() {
     return (
         <div >
-          <button className='btn btn-primary' onClick={this.onRandomClick.bind(this, this.props.firstID, this.props.lastID )}>Random Movie!</button>
+          <button className='btn btn-primary' onClick={this.onRandomClick.bind(this, this.props.randomID )}>Random Movie!</button>
         </div>
 
     );

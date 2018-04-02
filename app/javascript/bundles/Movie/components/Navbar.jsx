@@ -5,21 +5,15 @@ import {RandomButton} from './RandomButton'
 export class Navbar extends React.Component {
  
   render() {
-    let firstID 
-    let lastID 
+    
+    let randomID
 
-    this.props.movies.map(movie => {
-      if(movie.id > lastID || !lastID){
-        lastID = movie.id
-      }
-      if(movie.id < firstID || !firstID){
-        firstID = movie.id
-      }
-    })
-
+    if(this.props.movies && this.props.movies[Math.floor(Math.random()*this.props.movies.length)] ){
+      randomID = this.props.movies[Math.floor(Math.random()*this.props.movies.length)].id
+    }
     return (
       <div className='Navbar'>
-        <RandomButton firstID={firstID} lastID={lastID} />
+        <RandomButton randomID={randomID} />
       </div>
     );
   }
