@@ -1,24 +1,6 @@
-# README
+# Movie List!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Screenshots
 
-Things you may want to cover:
+![alt text](https://rawgit.com/mgenova12/react-tv-shows-app/master/app/assets/movieSS.jpg)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
