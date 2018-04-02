@@ -4,7 +4,6 @@ import {RandomButton} from './RandomButton'
 
 export class Navbar extends React.Component {
  
-
   render() {
     let firstID 
     let lastID 
@@ -17,14 +16,11 @@ export class Navbar extends React.Component {
         firstID = movie.id
       }
     })
-      // console.log(firstID)
-      // console.log(lastID)
 
     return (
-        <div className='Navbar'>
-          <RandomButton firstID={firstID} lastID={lastID} />
-        </div>
-
+      <div className='Navbar'>
+        <RandomButton firstID={firstID} lastID={lastID} />
+      </div>
     );
   }
 }

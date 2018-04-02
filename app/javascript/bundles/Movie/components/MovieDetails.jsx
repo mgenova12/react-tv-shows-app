@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {NextButton} from './NextButton'
-import {Navbar} from './Navbar'
+import {HomeButton} from './HomeButton'
 
 export default class MovieDetails extends React.Component {
   constructor(props) {
@@ -12,16 +12,12 @@ export default class MovieDetails extends React.Component {
   }
 
    getMovie(){
-    var url = window.location.pathname;
-    var id = url.substring(url.lastIndexOf('/') + 1);
-
     $.ajax({
-      url: '/api/v1/movies/' + id,
+      url: '/api/v1/movies/' + this.props.id,
       dataType: 'json',
       cache: false,
       success: function(data){
         this.setState({Movie: data}, function(){
-        	// console.log(data);
         });
       }.bind(this),
       error: function(xhr, status, err){
@@ -36,10 +32,10 @@ export default class MovieDetails extends React.Component {
 
   render() {
     return (      
-      <div>
         <div className='well clearfix'>
           <div className='details'>
               <h2>{this.state.Movie.title} ({this.state.Movie.year}) </h2>
+              <HomeButton/>
               <hr/>
 
               <img src={this.state.Movie.image}/> <br/>
@@ -55,12 +51,9 @@ export default class MovieDetails extends React.Component {
               <br/>
               Random Quote: "{this.state.Movie.quote}"
 
-
-              <NextButton movieID={this.state.Movie.id}/>
+              <NextButton movies={this.props.movies} movieID={this.state.Movie.id}/>
            </div>
         </div>
-      </div>
-
     );
   }
 }

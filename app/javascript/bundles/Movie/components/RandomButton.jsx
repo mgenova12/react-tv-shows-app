@@ -7,7 +7,6 @@ export class RandomButton extends React.Component {
     window.location.assign("/" + (Math.floor(Math.random()*(lastID-firstID+1)+firstID)))
   }
 
-
   render() {
     return (
         <div >

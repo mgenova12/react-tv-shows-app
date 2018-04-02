@@ -1,53 +1,24 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {Movie} from './Movie'
-import {Navbar} from './Navbar'
+import {MovieItem} from './MovieItem'
 
-export default class MovieList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
-      Movies: []
-    };
-  }
-
-   getMovies(){
-    $.ajax({
-      url: '/api/v1/movies',
-      dataType: 'json',
-      cache: false,
-      success: function(data){
-        this.setState({Movies: data}, function(){
-      });
-      }.bind(this),
-      error: function(xhr, status, err){
-        console.log(err);
-      }
-    });
-  } 
-
-  componentDidMount(){
-    this.getMovies();
-  }
+export class MovieList extends React.Component {
 
   render() {
     let movie;
 
-    if(this.state.Movies){
-      movie = this.state.Movies.map(movie => {
+    if(this.props.movies){
+      movie = this.props.movies.map(movie => {
         return (
-          <Movie key={movie.id} movie={movie}/>
+          <MovieItem key={movie.id} movie={movie}/>
         );
       })
     }
 
     return (
-		<div> 
-    	<Navbar movies={this.state.Movies}/>
-	      <div className="row">
-	        {movie}
-	      </div>
-      	</div>
+      <div className="row">
+        {movie}
+      </div>
     );
   }
 }

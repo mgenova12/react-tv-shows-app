@@ -1,2 +1,2 @@
 
-<%= react_component("MovieDetails", prerender: false) %>
+<%= react_component("MovieDetails", props: { id: @movie_id, movies: @movies }, prerender: false) %>
