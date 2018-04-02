@@ -4,8 +4,8 @@ import React from 'react';
 export class DeleteMovie extends React.Component {
 
   onDeleteMovie(id){
-    console.log(id);
     this.props.DeleteMovie(id)
+    
     $.ajax({
       type: 'DELETE',
       url: '/api/v1/movies/' + id,

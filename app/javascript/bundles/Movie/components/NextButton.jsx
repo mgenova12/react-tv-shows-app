@@ -3,42 +3,24 @@ import React from 'react';
 
 export class NextButton extends React.Component {
 
-  onNextClick(id){
-    window.location.assign("/" + (id+1))
+  onNextClick(movieID, movies){
+    let index = movies.findIndex(movie => movie.id === movieID)
+    let id = movies[index+1].id
+    window.location.assign("/" + id)
   }
 
-  onPreviousClick(id){
-    window.location.assign("/" + (id-1))
+  onPreviousClick(movieID, movies){
+    let index = movies.findIndex(movie => movie.id === movieID)
+    let id = movies[index-1].id
+    window.location.assign("/" + id)
   }
 
   render() {
-    let firstID 
-    let lastID 
-    let previousButton
-    let nextbutton
-
-    this.props.movies.map(movie => {
-      if(movie.id > lastID || !lastID){
-        lastID = movie.id
-      }
-      if(movie.id < firstID || !firstID){
-        firstID = movie.id
-      }
-    })
-
-    if(firstID === this.props.movieID){
-      nextbutton = <button className="btn btn-primary" onClick={this.onNextClick.bind(this, this.props.movieID)}> Next Movie </button>
-    } else if(lastID === this.props.movieID){
-      previousButton = <button className="btn btn-primary" onClick={this.onPreviousClick.bind(this, this.props.movieID)}> Previous Movie </button> 
-    } else {
-      nextbutton = <button className="btn btn-primary" onClick={this.onNextClick.bind(this, this.props.movieID)}> Next Movie </button>
-      previousButton = <button className="btn btn-primary" onClick={this.onPreviousClick.bind(this, this.props.movieID)}> Previous Movie </button> 
-    }
 
     return (
       <div className="nextbutton" >
-        {previousButton}
-        {nextbutton}
+        <button className="btn btn-primary" onClick={this.onPreviousClick.bind(this, this.props.movieID, this.props.movies)}> Previous Movie </button> 
+        <button className="btn btn-primary" onClick={this.onNextClick.bind(this, this.props.movieID, this.props.movies)}> Next Movie </button>
       </div>
     );
   }
