@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
   layout 'movie'
-  
   def index
 
   end
@@ -9,5 +8,6 @@ class MoviesController < ApplicationController
   	@movies = Movie.all 
   	@movie_id = Movie.find_by(id: params[:id]).id
   end
+
 
 end
