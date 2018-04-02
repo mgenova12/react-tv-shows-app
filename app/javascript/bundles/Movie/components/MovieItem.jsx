@@ -64,3 +64,12 @@ export class MovieItem extends React.Component {
     );
   }
 }
+
+
+MovieItem.propTypes = {
+  DeleteMovie: PropTypes.func,
+  movie: PropTypes.object
+};
+
+
+

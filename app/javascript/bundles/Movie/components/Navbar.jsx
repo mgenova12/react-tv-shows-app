@@ -18,3 +18,7 @@ export class Navbar extends React.Component {
     );
   }
 }
+
+Navbar.propTypes = {
+  movies: PropTypes.array
+};

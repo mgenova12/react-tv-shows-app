@@ -57,3 +57,7 @@ export default class MovieDetails extends React.Component {
     );
   }
 }
+
+
+
+

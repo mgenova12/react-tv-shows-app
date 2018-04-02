@@ -16,3 +16,8 @@ export class RandomButton extends React.Component {
     );
   }
 }
+
+
+RandomButton.propTypes = {
+  randomID: PropTypes.number
+};

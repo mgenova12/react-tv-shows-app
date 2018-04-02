@@ -26,3 +26,9 @@ export class MovieList extends React.Component {
     );
   }
 }
+
+
+MovieList.propTypes = {
+  DeleteMovie: PropTypes.func,
+  movies: PropTypes.array
+};

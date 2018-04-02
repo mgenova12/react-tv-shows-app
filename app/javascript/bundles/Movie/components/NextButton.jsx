@@ -25,3 +25,8 @@ export class NextButton extends React.Component {
     );
   }
 }
+
+NextButton.propTypes = {
+  movies: PropTypes.array,
+  movieID: PropTypes.number
+};

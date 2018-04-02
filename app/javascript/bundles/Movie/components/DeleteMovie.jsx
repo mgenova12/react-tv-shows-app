@@ -28,3 +28,9 @@ export class DeleteMovie extends React.Component {
     );
   }
 }
+
+
+DeleteMovie.propTypes = {
+  DeleteMovie: PropTypes.func,
+  movieID: PropTypes.number
+};

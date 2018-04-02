@@ -92,3 +92,12 @@ export class AddMovie extends React.Component {
     );
   }
 }
+
+
+AddMovie.propTypes = {
+  AddNewMovie: PropTypes.func
+};
+
+
+
+
